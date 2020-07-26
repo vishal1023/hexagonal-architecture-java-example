@@ -1,20 +1,21 @@
 package org.practice.domain;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Reminder {
 
-    private final Integer id;
+    private final String id;
     private final String message;
     private final LocalDateTime reminderTime;
 
-    public Reminder(Integer id, String message, LocalDateTime reminderTime) {
-        this.id = id;
+    public Reminder(String message, LocalDateTime reminderTime) {
+        this.id = UUID.randomUUID().toString();
         this.message = message;
         this.reminderTime = reminderTime;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

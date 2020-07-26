@@ -1,12 +1,14 @@
 package org.practice.controller;
 
 import org.practice.domain.Reminder;
+import org.practice.exception.ReminderNotFoundException;
 import org.practice.port.input.ReminderServicePort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
-@RestController("/reminder")
+@RestController
 public class ReminderController {
 
     private final ReminderServicePort reminderService;
@@ -15,24 +17,20 @@ public class ReminderController {
         this.reminderService = reminderService;
     }
 
-    @PostMapping("/creat")
-    public Reminder addReminder(@RequestParam String message, @RequestParam LocalDateTime reminderTime) {
+    @PostMapping("/reminder/create")
+    public Reminder addReminder(@RequestParam String message,
+                                @RequestParam("reminderTime")
+                                String reminderTime) {
         return reminderService.createReminder(message, reminderTime);
     }
 
-    @GetMapping("/{id}")
-    public Reminder getReminder(@PathVariable Integer id) {
+    @GetMapping("/reminder/{id}")
+    public Reminder getReminder(@PathVariable String id) {
         return reminderService.getReminder(id);
     }
 
-    @DeleteMapping("/{id}")
-    public Boolean deleteReminder(@PathVariable Integer id) {
-        return reminderService.deleteReminder(id);
+    @ExceptionHandler({ReminderNotFoundException.class})
+    public ResponseEntity<String> handleException() {
+        return new ResponseEntity<>("Reminder not found", NOT_FOUND);
     }
-
-    @PutMapping("/{id}")
-    public Reminder updateReminder(@PathVariable Integer id, @RequestParam String message, @RequestParam LocalDateTime reminderTime) {
-        return reminderService.updateReminder(id, message, reminderTime);
-    }
-
 }
