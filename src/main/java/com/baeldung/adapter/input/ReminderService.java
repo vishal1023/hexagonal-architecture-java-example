@@ -1,8 +1,8 @@
-package org.practice.adapter.input;
+package com.baeldung.adapter.input;
 
-import org.practice.domain.Reminder;
-import org.practice.port.input.ReminderServicePort;
-import org.practice.port.output.ReminderRepositoryPort;
+import com.baeldung.domain.Reminder;
+import com.baeldung.port.input.ReminderServicePort;
+import com.baeldung.port.output.ReminderRepositoryPort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

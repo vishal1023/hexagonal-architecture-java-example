@@ -1,4 +1,4 @@
-package org.practice.domain;
+package com.baeldung.domain;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

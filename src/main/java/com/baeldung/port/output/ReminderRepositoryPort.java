@@ -1,6 +1,6 @@
-package org.practice.port.output;
+package com.baeldung.port.output;
 
-import org.practice.domain.Reminder;
+import com.baeldung.domain.Reminder;
 import org.springframework.stereotype.Repository;
 
 @Repository

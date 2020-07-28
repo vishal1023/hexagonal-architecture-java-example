@@ -1,8 +1,8 @@
-package org.practice.adapter.output;
+package com.baeldung.adapter.output;
 
-import org.practice.domain.Reminder;
-import org.practice.exception.ReminderNotFoundException;
-import org.practice.port.output.ReminderRepositoryPort;
+import com.baeldung.domain.Reminder;
+import com.baeldung.exception.ReminderNotFoundException;
+import com.baeldung.port.output.ReminderRepositoryPort;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;

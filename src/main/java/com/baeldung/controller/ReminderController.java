@@ -1,8 +1,8 @@
-package org.practice.controller;
+package com.baeldung.controller;
 
-import org.practice.domain.Reminder;
-import org.practice.exception.ReminderNotFoundException;
-import org.practice.port.input.ReminderServicePort;
+import com.baeldung.domain.Reminder;
+import com.baeldung.exception.ReminderNotFoundException;
+import com.baeldung.port.input.ReminderServicePort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

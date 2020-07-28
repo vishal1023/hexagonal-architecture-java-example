@@ -1,6 +1,6 @@
-package org.practice.port.input;
+package com.baeldung.port.input;
 
-import org.practice.domain.Reminder;
+import com.baeldung.domain.Reminder;
 
 public interface ReminderServicePort {
 
